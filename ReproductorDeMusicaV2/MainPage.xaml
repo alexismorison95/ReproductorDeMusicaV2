@@ -25,12 +25,12 @@
             </Grid.ColumnDefinitions>
 
             <Button Style="{StaticResource NavigationBackButtonNormalStyle}" x:Name="BackButton"
-                    Grid.Column="1"/>
+                    Grid.Column="1"/> 
 
             <Image Source="Assets/Square44x44Logo.png" Grid.Column="1" 
-                   HorizontalAlignment="Left" Width="20" Height="20" Margin="48,0"/>
+                   HorizontalAlignment="Left" Width="20" Height="20" Margin="58,0"/>
 
-            <TextBlock Text="Reproductor de música v2" Grid.Column="1" Margin="80,8,0,0"
+            <TextBlock Text="Reproductor de música v2" Grid.Column="1" Margin="88,8,0,0"
                        Style="{StaticResource CaptionTextBlockStyle}"/>
 
         </Grid>
@@ -47,7 +47,8 @@
             </Border>
 
             <!--<Image x:Name="WindowsLogo" Stretch="None" Source="Assets/windows-sdk.png" Margin="0,15,0,0" AutomationProperties.AccessibilityView="Raw" />-->
-            <TextBlock x:Name="Header" Text="Menu seleccionado" Style="{StaticResource TagLineTextStyle}" Margin="0,15,0,0" />
+            <TextBlock x:Name="Header" Text="Menu seleccionado" Style="{StaticResource TagLineTextStyle}" 
+                       Margin="10,15,0,0" />
         </StackPanel>
 
         <SplitView x:Name="Splitter" IsPaneOpen="False" Grid.Row="2" DisplayMode="CompactOverlay">
