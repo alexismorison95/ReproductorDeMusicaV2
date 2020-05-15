@@ -4,84 +4,38 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ReproductorDeMusicaV2"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:muxc="using:Windows.UI.Xaml.Controls"
     mc:Ignorable="d"
     Background="{StaticResource CustomAcrylicLight}" RequestedTheme="Light">
 
-    <Grid>
+    <muxc:NavigationView x:Name="navigationView" IsBackButtonVisible="Visible" IsBackEnabled="False"
+                         IsSettingsVisible="True" PaneDisplayMode="Auto"
+                         SelectionChanged="navigationView_SelectionChanged"
+                         Loaded="navigationView_Loaded"
+                         BackRequested="navigationView_BackRequested">
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <muxc:NavigationView.MenuItems >
+            <muxc:NavigationViewItem Icon="Home" Content="Inicio" Tag="Home" />
+            <muxc:NavigationViewItem Icon="Library" Content="Biblioteca" Tag="Library" />
+            <muxc:NavigationViewItem Icon="MusicInfo" Content="Listas de reproducción" Tag="Playlists" />
+        </muxc:NavigationView.MenuItems>
 
-        <Grid x:Name="AppTitleBar" Background="Transparent" Grid.Row="0">
+        <Grid>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
-                <ColumnDefinition/>
-                <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
-            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-            <Button Style="{StaticResource NavigationBackButtonNormalStyle}" x:Name="BackButton"
-                    Grid.Column="1"/> 
-
-            <Image Source="Assets/Square44x44Logo.png" Grid.Column="1" 
-                   HorizontalAlignment="Left" Width="20" Height="20" Margin="58,0"/>
-
-            <TextBlock Text="Reproductor de música v2" Grid.Column="1" Margin="88,8,0,0"
-                       Style="{StaticResource CaptionTextBlockStyle}"/>
+            <Frame x:Name="contentFrame" Grid.Row="0"/>
+      
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Height="70"
+                        Background="{StaticResource CustomAcrylicLightGray}">
+                
+            </StackPanel>
 
         </Grid>
-
-        <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" Grid.Row="1">
-            <Border>
-                <ToggleButton Style="{StaticResource SymbolButton}" VerticalAlignment="Top"
-                              Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                              Click="ToggleButton_Click">
-                    <ToggleButton.Content>
-                        <FontIcon x:Name="Hamburger" FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" Margin="0,10,0,10"/>
-                    </ToggleButton.Content>
-                </ToggleButton>
-            </Border>
-
-            <!--<Image x:Name="WindowsLogo" Stretch="None" Source="Assets/windows-sdk.png" Margin="0,15,0,0" AutomationProperties.AccessibilityView="Raw" />-->
-            <TextBlock x:Name="Header" Text="Menu seleccionado" Style="{StaticResource TagLineTextStyle}" 
-                       Margin="10,15,0,0" />
-        </StackPanel>
-
-        <SplitView x:Name="Splitter" IsPaneOpen="False" Grid.Row="2" DisplayMode="CompactOverlay">
-
-            <SplitView.Pane>
-
-                <RelativePanel Background="{StaticResource CustomAcrylicLight}">
-
-                </RelativePanel>
-
-            </SplitView.Pane>
-
-            <RelativePanel>
-
-                <Frame x:Name="ScenarioFrame" Margin="5" 
-                       RelativePanel.AlignBottomWithPanel="True"
-                       RelativePanel.Above="ReproductorSection" 
-                       RelativePanel.AlignRightWithPanel="True" 
-                       RelativePanel.AlignLeftWithPanel="True"/>
-
-                <StackPanel x:Name="ReproductorSection" Height="70" 
-                            RelativePanel.AlignBottomWithPanel="True" 
-                            RelativePanel.AlignRightWithPanel="True" 
-                            RelativePanel.AlignLeftWithPanel="True"
-                            Background="{StaticResource CustomAcrylicLightGray}">
-
-                    <TextBlock Margin="10,0,0,10" TextWrapping="Wrap" Text="Aca va el reproductor" />
-
-                </StackPanel>
-                
-            </RelativePanel>
-
-        </SplitView>
-
-    </Grid>
-</Page>
+        
+    </muxc:NavigationView>
+</Page> 
