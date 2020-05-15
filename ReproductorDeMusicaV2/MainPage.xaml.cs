@@ -29,11 +29,11 @@ namespace ReproductorDeMusicaV2
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public ObservableCollection<Scenario> pages = new ObservableCollection<Scenario>
+        public ObservableCollection<MyPage> pages = new ObservableCollection<MyPage>
         {
-            new Scenario() { Tag="Home", Tooltip="Inicio", Glyph=Symbol.Home, ClassType=typeof(Home) },
-            new Scenario() { Tag="Library", Tooltip="Biblioteca", Glyph=Symbol.Library, ClassType=typeof(Library) },
-            new Scenario() { Tag="Playlists", Tooltip="Listas de reproduccion", Glyph=Symbol.MusicInfo, ClassType=typeof(Playlists) },
+            new MyPage() { Tag="Home", Tooltip="Inicio", Glyph=Symbol.Home, ClassType=typeof(Home) },
+            new MyPage() { Tag="Library", Tooltip="Biblioteca", Glyph=Symbol.Library, ClassType=typeof(Library) },
+            new MyPage() { Tag="Playlists", Tooltip="Listas de reproduccion", Glyph=Symbol.MusicInfo, ClassType=typeof(Playlists) }
             //new Scenario() { Name="Settings", Tooltip="Configuracion", Glyph=Symbol.Home, ClassType=typeof(Settings) }
         };
 
@@ -137,5 +137,16 @@ namespace ReproductorDeMusicaV2
                 contentFrame.GoBack();
             }
         }
+    }
+
+    public class MyPage
+    {
+        public string Tag { get; set; }
+
+        public string Tooltip { get; set; }
+
+        public Symbol Glyph { get; set; }
+
+        public Type ClassType { get; set; }
     }
 }

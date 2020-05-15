@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReproductorDeMusicaV2.Services;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -47,12 +48,12 @@ namespace ReproductorDeMusicaV2
 
         private void App_Resuming(object sender, object e)
         {
-            //ShowToast("Resuming");
+            ShowToast("Resuming");
         }
 
         private void MemoryManager_AppMemoryUsageIncreased(object sender, object e)
         {
-            //ShowToast("Memory usage increased");
+            ShowToast("Memory usage increased");
 
             var level = MemoryManager.AppMemoryUsageLevel;
 
@@ -64,9 +65,9 @@ namespace ReproductorDeMusicaV2
 
         private void MemoryManager_AppMemoryUsageLimitChanging(object sender, AppMemoryUsageLimitChangingEventArgs e)
         {
-            //ShowToast("Memory usage limit changing from "
-            //     + (e.OldLimit / 1024) + "K to "
-            //     + (e.NewLimit / 1024) + "K");
+            ShowToast("Memory usage limit changing from " 
+                + (e.OldLimit / 1024) + "K to "
+                + (e.NewLimit / 1024) + "K");
 
             if (MemoryManager.AppMemoryUsage >= e.NewLimit)
             {
@@ -76,7 +77,7 @@ namespace ReproductorDeMusicaV2
 
         private void App_LeavingBackground(object sender, LeavingBackgroundEventArgs e)
         {
-            //ShowToast("Leaving background");
+            ShowToast("Leaving background");
 
             isInBackgroundMode = false;
 
@@ -91,7 +92,7 @@ namespace ReproductorDeMusicaV2
 
         private void App_EnteredBackground(object sender, EnteredBackgroundEventArgs e)
         {
-            //ShowToast("Entered background");
+            ShowToast("Entered background");
 
             isInBackgroundMode = true;
         }
@@ -100,7 +101,7 @@ namespace ReproductorDeMusicaV2
         {
             if (isInBackgroundMode && Window.Current.Content != null)
             {
-                //ShowToast("Unloading view");
+                ShowToast("Unloading view");
 
                 Window.Current.Content = null;
             }
@@ -129,7 +130,7 @@ namespace ReproductorDeMusicaV2
 
             if (rootFrame == null)
             {
-                //ShowToast("Creating Frame");
+                ShowToast("Creating Frame");
 
                 rootFrame = new Frame();
 
@@ -169,7 +170,7 @@ namespace ReproductorDeMusicaV2
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Guardar el estado de la aplicación y detener toda actividad en segundo plano
 
-            //ShowToast("Suspending");
+            ShowToast("Suspending");
 
             deferral.Complete();
         }
@@ -187,9 +188,8 @@ namespace ReproductorDeMusicaV2
 
             Debug.WriteLine(msg + "\n" + subMsg);
 
-            // Todavia no esta implementado el SettingsService
-            ////if (!SettingsService.Instance.ToastOnAppEvents)
-            ////    return;
+            if (!SettingsService.Instance.ToastOnAppEvents)
+                return;
 
             var toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText02);
 

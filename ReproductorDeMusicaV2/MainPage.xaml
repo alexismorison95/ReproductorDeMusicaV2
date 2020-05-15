@@ -18,7 +18,7 @@
         <muxc:NavigationView.MenuItems>
             <muxc:NavigationViewItem Icon="Home" Content="Inicio" Tag="Home"/>
             <muxc:NavigationViewItem Icon="Library" Content="Biblioteca" Tag="Library" />
-            <muxc:NavigationViewItem Icon="MusicInfo" Content="Listas de reproducción" Tag="Playlists" />
+            <muxc:NavigationViewItem Icon="MusicInfo" Content="Listas de reproducción" Tag="Playlists"/>
         </muxc:NavigationView.MenuItems>
 
         <Grid>
