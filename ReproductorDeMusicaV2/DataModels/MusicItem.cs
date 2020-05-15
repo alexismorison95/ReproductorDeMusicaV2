@@ -9,7 +9,7 @@ using Windows.Media.Playback;
 
 namespace ReproductorDeMusicaV2.DataModels
 {
-    class MusicItem : MediaItem
+    public class MusicItem : MediaItem
     {
         public Uri AlbumArtUri { get; set; }
 

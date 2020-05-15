@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ReproductorDeMusicaV2.ViewModels
 {
-    class SettingsViewModel : INotifyPropertyChanged
+    public class SettingsViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

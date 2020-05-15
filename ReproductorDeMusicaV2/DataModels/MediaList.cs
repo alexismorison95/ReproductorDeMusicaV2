@@ -9,7 +9,7 @@ using Windows.Storage;
 
 namespace ReproductorDeMusicaV2.DataModels
 {
-    class MediaList : List<MediaItem>
+    public class MediaList : List<MediaItem>
     {
         public string Title { get; set; }
 
@@ -31,6 +31,7 @@ namespace ReproductorDeMusicaV2.DataModels
 
             Title = json["title"].GetString();
             var items = json["items"].GetArray();
+
             foreach (var jsonItem in items)
             {
                 Add(LoadItem(jsonItem.GetObject()));

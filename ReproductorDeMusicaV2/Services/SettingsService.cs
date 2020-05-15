@@ -40,7 +40,7 @@ namespace ReproductorDeMusicaV2.Services
                     return (bool)setting;
                 }
                 // TODO: Cuando este implementada la pagina, cambiar a true
-                return false;
+                return true;
             }
             set
             {

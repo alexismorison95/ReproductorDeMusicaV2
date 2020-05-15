@@ -6,9 +6,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="Transparent">
+    Background="{StaticResource CustomAcrylicLight}" RequestedTheme="Light">
 
-    <Grid>
+    <Grid Margin="13,0,10,0">
+
+        <StackPanel>
+            
+            <CheckBox IsChecked="{x:Bind Path=ViewModel.ToastOnAppEvents,Mode=TwoWay}">
+                Toast on App Events
+            </CheckBox>
+         
+        </StackPanel>
 
     </Grid>
 </Page>

@@ -9,7 +9,7 @@ using Windows.UI.Core;
 
 namespace ReproductorDeMusicaV2.ViewModels
 {
-    class PlaybackSessionViewModel : INotifyPropertyChanged, IDisposable
+    public class PlaybackSessionViewModel : INotifyPropertyChanged, IDisposable
     {
         bool disposed;
         MediaPlayer player;

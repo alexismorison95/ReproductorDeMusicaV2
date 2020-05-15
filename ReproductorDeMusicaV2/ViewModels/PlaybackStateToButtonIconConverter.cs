@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Data;
 
 namespace ReproductorDeMusicaV2.ViewModels
 {
-    class PlaybackStateToButtonIconConverter : IValueConverter
+    public class PlaybackStateToButtonIconConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {

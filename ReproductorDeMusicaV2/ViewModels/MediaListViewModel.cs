@@ -11,7 +11,7 @@ using Windows.UI.Core;
 
 namespace ReproductorDeMusicaV2.ViewModels
 {
-    class MediaListViewModel : ObservableCollection<MediaItemViewModel>, IDisposable
+    public class MediaListViewModel : ObservableCollection<MediaItemViewModel>, IDisposable
     {
         CoreDispatcher dispatcher;
         int currentItemIndex = -1;

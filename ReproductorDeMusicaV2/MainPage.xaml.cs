@@ -29,6 +29,8 @@ namespace ReproductorDeMusicaV2
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public static MainPage Current;
+
         public ObservableCollection<MyPage> pages = new ObservableCollection<MyPage>
         {
             new MyPage() { Tag="Home", Tooltip="Inicio", Glyph=Symbol.Home, ClassType=typeof(Home) },
@@ -40,6 +42,10 @@ namespace ReproductorDeMusicaV2
         public MainPage()
         {
             this.InitializeComponent();
+
+            // This is a static public property that allows downstream pages to get a handle to the MainPage instance
+            // in order to call methods that are in this class.
+            Current = this;
 
             CustomTitleBar();
         }

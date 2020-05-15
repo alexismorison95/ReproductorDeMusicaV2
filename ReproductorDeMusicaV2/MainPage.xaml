@@ -5,7 +5,7 @@
     xmlns:local="using:ReproductorDeMusicaV2"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    xmlns:muxc="using:Windows.UI.Xaml.Controls"
+    xmlns:muxc="using:Windows.UI.Xaml.Controls" xmlns:local1="using:ReproductorDeMusicaV2.Pages"
     mc:Ignorable="d"
     Background="{StaticResource CustomAcrylicLight}" RequestedTheme="Light">
 
@@ -29,11 +29,17 @@
             </Grid.RowDefinitions>
 
             <Frame x:Name="contentFrame" Grid.Row="0"/>
-      
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Height="70"
+
+            <StackPanel Grid.Row="1"
                         Background="{StaticResource CustomAcrylicLightGray}">
-                
+
+                <Frame x:Name="currentPlayingBar">
+                    <local1:CurrentPlayingBar />
+                </Frame>
+
             </StackPanel>
+
+
 
         </Grid>
         

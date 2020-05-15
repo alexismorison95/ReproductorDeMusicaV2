@@ -10,7 +10,7 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace ReproductorDeMusicaV2.ViewModels
 {
-    class MediaItemViewModel : INotifyPropertyChanged
+    public class MediaItemViewModel : INotifyPropertyChanged
     {
         MediaListViewModel listViewModel;
         MediaPlaybackItem playbackItem;

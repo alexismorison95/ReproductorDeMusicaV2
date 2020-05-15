@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReproductorDeMusicaV2.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,16 @@ namespace ReproductorDeMusicaV2.Pages
     /// </summary>
     public sealed partial class Settings : Page
     {
+        public SettingsViewModel ViewModel { get; set; }
+
         public Settings()
         {
+            ViewModel = new SettingsViewModel();
+
             this.InitializeComponent();
+
+            // Always use the cached page
+            this.NavigationCacheMode = NavigationCacheMode.Required;
         }
     }
 }

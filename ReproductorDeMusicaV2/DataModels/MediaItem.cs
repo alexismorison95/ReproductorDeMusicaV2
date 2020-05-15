@@ -10,7 +10,7 @@ using Windows.Storage.Streams;
 
 namespace ReproductorDeMusicaV2.DataModels
 {
-    class MediaItem
+    public class MediaItem
     {
         public const string MediaItemIdKey = "mediaItemId";
 
