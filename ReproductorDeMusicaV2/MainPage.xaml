@@ -10,13 +10,13 @@
     Background="{StaticResource CustomAcrylicLight}" RequestedTheme="Light">
 
     <muxc:NavigationView x:Name="navigationView" IsBackButtonVisible="Visible" IsBackEnabled="False"
-                         IsSettingsVisible="True" PaneDisplayMode="Auto"
+                         IsSettingsVisible="True" PaneDisplayMode="Auto" OpenPaneLength="230"
                          SelectionChanged="navigationView_SelectionChanged"
                          Loaded="navigationView_Loaded"
                          BackRequested="navigationView_BackRequested">
 
-        <muxc:NavigationView.MenuItems >
-            <muxc:NavigationViewItem Icon="Home" Content="Inicio" Tag="Home" />
+        <muxc:NavigationView.MenuItems>
+            <muxc:NavigationViewItem Icon="Home" Content="Inicio" Tag="Home"/>
             <muxc:NavigationViewItem Icon="Library" Content="Biblioteca" Tag="Library" />
             <muxc:NavigationViewItem Icon="MusicInfo" Content="Listas de reproducción" Tag="Playlists" />
         </muxc:NavigationView.MenuItems>

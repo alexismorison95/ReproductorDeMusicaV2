@@ -42,19 +42,13 @@ namespace ReproductorDeMusicaV2
             this.InitializeComponent();
 
             CustomTitleBar();
-
-            CrearTitleBarLight();
         }
 
         private void CustomTitleBar()
         {
             var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
             coreTitleBar.ExtendViewIntoTitleBar = true;
-        }
 
-
-        private void CrearTitleBarLight()
-        {
             var titleBar = ApplicationView.GetForCurrentView().TitleBar;
 
             titleBar.ButtonForegroundColor = Colors.Black;
@@ -102,7 +96,6 @@ namespace ReproductorDeMusicaV2
             else
             {
                 var item = pages.FirstOrDefault(p => p.Tag.Equals(navItemName));
-
                 _page = item.ClassType;
             }
 
